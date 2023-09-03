@@ -1,0 +1,10 @@
+﻿@model Product
+@{
+}
+
+<tr>
+    <td>@Model?.Name</td>
+    <td>@Model?.Price</td>
+    <td><a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a></td>
+</tr>
+

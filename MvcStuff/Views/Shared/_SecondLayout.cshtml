@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <h6 class="bg-primary text-white text-center m-2 p-2">Shared View</h6>
+    <div>
+        @(ViewBag.Title)
+    </div>
+    <div>
+        @RenderSection("Header", required: false)
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <div>
+        @RenderSection("Footer", required: false)
+    </div>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

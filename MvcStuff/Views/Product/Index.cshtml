@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Product>
+@{
+    Layout = "_SecondLayout";
+    ViewBag.Title = ViewBag.Title ?? "Productsssss";
+}
+@section Header {
+    <div>
+        <p>Hidie Ho</p>
+    </div>
+}
+<hr />
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <partial name="_ProductRowPartial" model="p"/>
+            @* <tr>
+                <td>@p.Name</td>
+                <td>@($"{p.Price:c}")</td>
+            </tr> *@
+        }
+    </tbody>
+</table>
+@* @foreach (var p in Model)
+{
+    <div><span>@p.Name</span><span>@($"{p.Price:c}")</span></div>
+    <hr/>
+} *@
+@section Footer {
+    <div>Total price: @Model.Sum(p => p.Price)</div>
+    <div>Footer section</div>
+}

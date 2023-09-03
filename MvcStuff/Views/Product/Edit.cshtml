@@ -1,0 +1,40 @@
+﻿@model Product
+@{
+    Layout = "_SecondLayout";
+}
+
+<h1>Edit</h1>
+@* <partial name="_ValidationPartial" /> *@
+
+<form asp-action="Edit", method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div>
+        <label asp-for="Id"></label>
+        <div><span asp-validation-for="Id" class="text-danger"></span></div>
+        <input asp-for="Id" data-val="true" data-val-required="Een melding" />
+    </div>
+    <div>
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="Price">Price</label>
+        <input asp-for="Price" />
+    </div>
+    <div>
+        <label asp-for="Description">Description</label>
+        <textarea asp-for="Description"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+</form>
+<div>
+    @Json.Serialize(Model)
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
