@@ -1,12 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MvcStuff.Models;
+using MvcStuff.Domain.Models;
 using MvcStuff.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MvcStuff.Controllers;
 public class ProductController : Controller
@@ -21,6 +15,7 @@ public class ProductController : Controller
     public IActionResult Index()
     {
         ViewBag.Title = "Viewbag title vanuit ActionMethod";
+        ViewBag.Blablabla = "bladadad";
         return View(_productRepository.GetAll());
     }
 

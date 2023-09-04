@@ -1,9 +1,9 @@
-﻿using MvcStuff.Models;
+﻿using MvcStuff.Domain.Models;
 
 namespace MvcStuff.Repositories;
 public class ProductRepository : IProductRepository
 {
-    readonly List<Product> _products = new List<Product>();
+    readonly List<Product> _products = new();
     public ProductRepository()
     {
         _products = seedDummyProducts();

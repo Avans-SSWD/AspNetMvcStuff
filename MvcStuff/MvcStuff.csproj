@@ -10,4 +10,8 @@
     <None Include="Views\Product\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MvcStuff.Domain\MvcStuff.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
