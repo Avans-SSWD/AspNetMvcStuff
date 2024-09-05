@@ -1,3 +1,4 @@
+using MvcStuff.Core.Domain.Interfaces;
 using MvcStuff.Middleware;
 using MvcStuff.Repositories;
 
@@ -21,6 +22,7 @@ builder.Services.AddSingleton<IProductRepository, ProductRepository>();
 //
 // ... eventuele andere services
 //
+
 builder.Services.AddTransient<PrintHelloMiddleware>();
 
 // configuratie klaar, webapp instantie maken -->
@@ -33,6 +35,7 @@ var app = builder.Build();
 app.UseMiddleware<PrintHelloMiddleware>();
 
 app.Use(async (context, next) => {
+    //// in de request pipeline gaan zitten -->
     //context.Response.ContentType = "text/html";
     //await context.Response.WriteAsync("<h1>Middleware 1</h1>");
     await next.Invoke();
@@ -69,7 +72,7 @@ app.UseStaticFiles();
 app.UseSession();
 
 
-app.UseRouting();
+//app.UseRouting();
 
 
 
@@ -78,7 +81,7 @@ app.UseAuthorization();
 
 // endpoint routing configureren -->
 
-// matched alles -->
+//// matched alles -->
 //app.MapControllerRoute(
 //    name: "matchAlles",
 //    pattern: "{*url}",

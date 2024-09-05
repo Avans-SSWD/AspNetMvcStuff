@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿@model ProductListViewModel
 @{
     Layout = "_SecondLayout";
     ViewBag.Title = ViewBag.Title ?? "Productsssss";
@@ -17,7 +17,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var p in Model)
+        @foreach (var p in Model.Products)
         {
             <partial name="_ProductRowPartial" model="p"/>
             @* <tr>
@@ -33,6 +33,6 @@
     <hr/>
 } *@
 @section Footer {
-    <div>Total price: @Model.Sum(p => p.Price)</div>
+    <div>Total price: @Model.Products.Sum(p => p.Price)</div>
     <div>Footer section</div>
 }

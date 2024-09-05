@@ -1,6 +1,6 @@
-﻿using MvcStuff.Domain.Models;
+﻿using MvcStuff.Core.Domain.Models;
 
-namespace MvcStuff.Repositories;
+namespace MvcStuff.Core.Domain.Interfaces;
 public interface IProductRepository
 {
     void Add(Product product);

@@ -1,4 +1,5 @@
-﻿using MvcStuff.Domain.Models;
+﻿using MvcStuff.Core.Domain.Interfaces;
+using MvcStuff.Core.Domain.Models;
 
 namespace MvcStuff.Repositories;
 public class ProductRepository : IProductRepository
