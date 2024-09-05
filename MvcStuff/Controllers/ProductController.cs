@@ -41,6 +41,7 @@ public class ProductController : Controller
 
         if (productEntity == null)
         {
+            //throw new Exception("Product not found");
             return new NotFoundResult();
         }
         var viewModel = new ProductViewModel
