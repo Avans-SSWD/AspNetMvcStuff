@@ -13,16 +13,23 @@ public class ProductController : Controller
         _productRepository = productRepository;
     }
 
-    public IActionResult Index()
+    public int PageSize { get; set; } = 2;
+
+    public IActionResult Index(int page = 1)
     {
         // ViewBag zo min mogelijk gebruiken! -->
         ViewBag.Title = "Viewbag title vanuit ActionMethod";
         ViewBag.Blablabla = "bladadad";
+        
+        var productsToReturn = _productRepository.GetAll()
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize);
+
         // Viewmodels zijn betere optie -->
         ProductListViewModel model = new()
         {
             Title = "Product overview",
-            Products = _productRepository.GetAll()
+            Products = productsToReturn
                 .Select(p => // Ook de collectie van entiteiten omzetten naar viewmodels -->
                     new ProductViewModel 
                     { 
@@ -31,6 +38,13 @@ public class ProductController : Controller
                         Description = p.Description, 
                         Price = p.Price 
                     }),
+            PagingInfo = new PagingInfo
+            {
+                CurrentPage = page,
+                ItemsPerPage = PageSize,
+                // Materialized .Count() de collectie? Zo ja is dit een slecht idee -->
+                TotalItems = _productRepository.GetAll().Count(),
+            },
         };
         return View(model);
     }

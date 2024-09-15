@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34004.107
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcStuff", "MvcStuff\MvcStuff.csproj", "{5BE42B8D-83BC-47AA-8FDC-51F71110D396}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcStuff.UI", "MvcStuff.UI\MvcStuff.UI.csproj", "{5BE42B8D-83BC-47AA-8FDC-51F71110D396}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcStuff.Core.Domain", "MvcStuff.Core.Domain\MvcStuff.Core.Domain.csproj", "{6A86BE12-0083-4E5E-95B3-E76386430F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcStuff.UI.Test", "MvcStuff.UI.Test\MvcStuff.UI.Test.csproj", "{A53307FC-6E62-40EF-94C3-D710BEA995FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6A86BE12-0083-4E5E-95B3-E76386430F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A86BE12-0083-4E5E-95B3-E76386430F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A86BE12-0083-4E5E-95B3-E76386430F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53307FC-6E62-40EF-94C3-D710BEA995FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53307FC-6E62-40EF-94C3-D710BEA995FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53307FC-6E62-40EF-94C3-D710BEA995FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53307FC-6E62-40EF-94C3-D710BEA995FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

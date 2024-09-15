@@ -32,7 +32,8 @@
     <div><span>@p.Name</span><span>@($"{p.Price:c}")</span></div>
     <hr/>
 } *@
+<div page-model="@Model?.PagingInfo" page-action="Index"></div>
 @section Footer {
-    <div>Total price: @Model.Products.Sum(p => p.Price)</div>
+    <div>Total price (on this page): @Model?.Products.Sum(p => p.Price)</div>
     <div>Footer section</div>
 }
