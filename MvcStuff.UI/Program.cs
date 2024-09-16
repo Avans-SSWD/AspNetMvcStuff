@@ -35,7 +35,7 @@ var app = builder.Build();
 app.UseMiddleware<PrintHelloMiddleware>();
 
 app.Use(async (context, next) => {
-    await File.AppendAllTextAsync(@$"c:\tmp\log.txt", DateTime.Now.ToString("yyyy-MM-ddThhmmss") + " - Request received\n");
+    //await File.AppendAllTextAsync(@$"c:\tmp\log.txt", DateTime.Now.ToString("yyyy-MM-ddThhmmss") + " - Request received\n");
     //// in de request pipeline gaan zitten -->
     //context.Response.ContentType = "text/html";
     //await context.Response.WriteAsync("<h1>Middleware 1</h1>");

@@ -14,13 +14,16 @@ public class ProductController : Controller
     }
 
     public int PageSize { get; set; } = 2;
-
+    public IActionResult RouteTest(string id)
+    {
+        return View(nameof(RouteTest), id);
+    }
     public IActionResult Index(int page = 1)
     {
         // ViewBag zo min mogelijk gebruiken! -->
         ViewBag.Title = "Viewbag title vanuit ActionMethod";
         ViewBag.Blablabla = "bladadad";
-        
+
         var productsToReturn = _productRepository.GetAll()
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize);
@@ -31,12 +34,12 @@ public class ProductController : Controller
             Title = "Product overview",
             Products = productsToReturn
                 .Select(p => // Ook de collectie van entiteiten omzetten naar viewmodels -->
-                    new ProductViewModel 
-                    { 
+                    new ProductViewModel
+                    {
                         Id = p.Id,
-                        Name = p.Name, 
-                        Description = p.Description, 
-                        Price = p.Price 
+                        Name = p.Name,
+                        Description = p.Description,
+                        Price = p.Price
                     }),
             PagingInfo = new PagingInfo
             {

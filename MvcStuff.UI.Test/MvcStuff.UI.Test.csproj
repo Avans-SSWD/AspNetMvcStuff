@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MvcStuff.Core.Domain\MvcStuff.Core.Domain.csproj" />
-    <ProjectReference Include="..\MvcStuff\MvcStuff.UI.csproj" />
+    <ProjectReference Include="..\MvcStuff.UI\MvcStuff.UI.csproj" />
   </ItemGroup>
 
   <ItemGroup>
